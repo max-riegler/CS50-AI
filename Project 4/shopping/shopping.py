@@ -67,8 +67,6 @@ def load_data(filename):
         months = {"Jan" : 0, "Feb" : 1, "Mar" : 2, "Apr" : 3, "May" : 4, "June" : 5, "Jul" : 6, "Aug" : 7, "Sep" : 8, "Oct" : 9, "Nov" : 10, "Dec" : 12}
         visitors = {"Other" : 0, "New_Visitor" : 0, "Returning_Visitor" : 1}
         TrueFalse = {"FALSE" : 0, "TRUE" : 1}
-        # Skip the first line
-        next(reader)
         # Loop through every row in reader
         for row in reader:
             
@@ -85,19 +83,19 @@ def load_data(filename):
             evidence_helper.append(float(row["ExitRates"]))
             evidence_helper.append(float(row["PageValues"]))
             evidence_helper.append(float(row["SpecialDay"]))
-            evidence_helper.append(months[row["Month"]])
+            evidence_helper.append(int(months[row["Month"]]))
             evidence_helper.append(int(row["OperatingSystems"]))
             evidence_helper.append(int(row["Browser"]))
             evidence_helper.append(int(row["Region"]))
             evidence_helper.append(int(row["TrafficType"]))
-            evidence_helper.append(visitors[row["VisitorType"]])
-            evidence_helper.append(TrueFalse[row["Weekend"]])
+            evidence_helper.append(int(visitors[row["VisitorType"]]))
+            evidence_helper.append(int(TrueFalse[row["Weekend"]]))
 
             # Add evidence line to evidence
             evidence.append(evidence_helper)
 
             # Append Labels to List
-            labels.append(TrueFalse[row["Revenue"]])
+            labels.append(int(TrueFalse[row["Revenue"]]))
     
     return evidence, labels
 
