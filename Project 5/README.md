@@ -59,7 +59,7 @@ To build this model, I started with a basic model that contains a convolution la
     tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
     ])
 ```
-* This model had a surprisingly abysmal performance in terms of accuracy (~5%). This was most likely due to a bad choice of filter parameters and number of layer units.
+* This model had a surprisingly abysmal performance in terms of accuracy (5%). This was most likely due to a bad choice of filter parameters and number of layer units.
 
 #### Basic Model (Better filter and more units):
 ```python
@@ -74,7 +74,7 @@ To build this model, I started with a basic model that contains a convolution la
     tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
     ])
 ```
-* This adjusted model performed considerably better (~94%) accuracy on the testing data, however training also took considerably longer than before (~73ms/step in comparison to ~12ms/step).
+* This adjusted model performed considerably better (94%) accuracy on the testing data, however training also took considerably longer than before (73ms/step in comparison to 12ms/step).
 
 #### Additional Convolution and Pooling Layers:
 ```python
@@ -93,7 +93,7 @@ To build this model, I started with a basic model that contains a convolution la
     tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
     ])
 ```
-* This model with an additional convolution and pooling layer performed similarly as the one before (~96% accuracy), however, with a considerably better training performance (~18ms/step).
+* This model with an additional convolution and pooling layer performed similarly as the one before (96% accuracy), however, with a considerably better training performance (18ms/step).
 
 #### Additional Convolution and Pooling Layers (Better filter):
 ```python
@@ -113,7 +113,7 @@ To build this model, I started with a basic model that contains a convolution la
     ])
 ```
 
-* This model performed roughly as well as the previous one (~97% accuracy), however, again at the price of a longer training time (~30ms/step).
+* This model performed roughly as well as the previous one (97% accuracy), however, again at the price of a longer training time (30ms/step).
 
 #### Additional Convolution and Pooling Layers (More units in the hidden layer):
 ```python
@@ -133,7 +133,7 @@ To build this model, I started with a basic model that contains a convolution la
     ])
 ```
 
-* This model performed again roughly as well as the previous one (~97% accuracy), however, with much faster training time (~20ms/step).
+* This model performed again roughly as well as the previous one (97% accuracy), however, with much faster training time (20ms/step).
 
 #### Additional Convolution and Pooling Layers (Better filter and more units in the hidden layer):
 ```python
@@ -153,7 +153,7 @@ To build this model, I started with a basic model that contains a convolution la
     ])
 ```
 
-* Surprisingly, this model performed slightly worse than the previous one (~95% accuracy), despite approximately double the training time (~37ms/step). I let the model run a couple of times and the accuracy stayed roughly at around 92~95%.
+* Surprisingly, this model performed slightly worse than the previous one (95% accuracy), despite approximately double the training time (37ms/step). I let the model run a couple of times and the accuracy stayed roughly at around 92-95%.
 
 ### Overall Result
 
